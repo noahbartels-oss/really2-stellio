@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import bcrypt from "bcryptjs";
 import { prisma } from "@/lib/prisma";
+import { ensureDatabase } from "@/lib/db-setup";
 
 export async function POST(req: NextRequest) {
   try {
@@ -21,7 +22,18 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Test DB connection first
+    // Ensure database tables exist
+    try {
+      await ensureDatabase();
+    } catch (setupError) {
+      console.error("Database setup error:", setupError);
+      return NextResponse.json(
+        { error: "Datenbank-Setup fehlgeschlagen. Bitte versuche es später erneut." },
+        { status: 503 }
+      );
+    }
+
+    // Check for existing user
     let existingUser;
     try {
       existingUser = await prisma.user.findUnique({
