@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
-import { createCheckoutSession } from "@/lib/stripe";
+import { createPayPalOrder } from "@/lib/paypal";
 import { PRODUCTS } from "@/lib/utils";
 
 export async function POST(req: NextRequest) {
@@ -21,22 +21,18 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Ungültiges Produkt" }, { status: 400 });
     }
 
-    const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000";
-
-    const checkoutSession = await createCheckoutSession({
+    const order = await createPayPalOrder({
       priceInCents: product.price,
       productName: `Stellio – ${product.name}`,
       productType,
       userId,
-      successUrl: `${baseUrl}/dashboard?payment=success`,
-      cancelUrl: `${baseUrl}/dashboard?payment=cancelled`,
     });
 
-    return NextResponse.json({ url: checkoutSession.url });
+    return NextResponse.json({ orderID: order.id });
   } catch (error) {
-    console.error("Checkout error:", error);
+    console.error("PayPal create order error:", error);
     return NextResponse.json(
-      { error: "Checkout fehlgeschlagen" },
+      { error: "PayPal-Bestellung konnte nicht erstellt werden" },
       { status: 500 }
     );
   }
