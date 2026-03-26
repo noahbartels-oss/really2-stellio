@@ -4,7 +4,8 @@ import { prisma } from "@/lib/prisma";
 
 export async function POST(req: NextRequest) {
   try {
-    const { name, email, password } = await req.json();
+    const body = await req.json();
+    const { name, email, password } = body;
 
     if (!email || !password) {
       return NextResponse.json(
@@ -20,9 +21,19 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const existingUser = await prisma.user.findUnique({
-      where: { email },
-    });
+    // Test DB connection first
+    let existingUser;
+    try {
+      existingUser = await prisma.user.findUnique({
+        where: { email },
+      });
+    } catch (dbError) {
+      console.error("Database connection error:", dbError);
+      return NextResponse.json(
+        { error: "Datenbankverbindung fehlgeschlagen. Bitte versuche es später erneut." },
+        { status: 503 }
+      );
+    }
 
     if (existingUser) {
       return NextResponse.json(
@@ -33,22 +44,31 @@ export async function POST(req: NextRequest) {
 
     const passwordHash = await bcrypt.hash(password, 12);
 
-    const user = await prisma.user.create({
-      data: {
-        name,
-        email,
-        passwordHash,
-      },
-    });
+    try {
+      const user = await prisma.user.create({
+        data: {
+          name: name || null,
+          email,
+          passwordHash,
+        },
+      });
 
-    return NextResponse.json(
-      { message: "Konto erfolgreich erstellt", userId: user.id },
-      { status: 201 }
-    );
+      return NextResponse.json(
+        { message: "Konto erfolgreich erstellt", userId: user.id },
+        { status: 201 }
+      );
+    } catch (createError) {
+      console.error("User creation error:", createError);
+      return NextResponse.json(
+        { error: "Konto konnte nicht erstellt werden. Bitte versuche es erneut." },
+        { status: 500 }
+      );
+    }
   } catch (error) {
     console.error("Registration error:", error);
+    const message = error instanceof Error ? error.message : "Unbekannter Fehler";
     return NextResponse.json(
-      { error: "Registrierung fehlgeschlagen" },
+      { error: `Registrierung fehlgeschlagen: ${message}` },
       { status: 500 }
     );
   }
