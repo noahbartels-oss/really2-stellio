@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Button from "@/components/ui/Button";
 import Input from "@/components/ui/Input";
+import Logo from "@/components/Logo";
 
 export default function ResetPasswordPage() {
   const [email, setEmail] = useState("");
@@ -27,12 +28,9 @@ export default function ResetPasswordPage() {
   return (
     <div className="min-h-screen flex items-center justify-center p-8 bg-slate-50">
       <div className="w-full max-w-md">
-        <Link href="/" className="flex items-center gap-2 mb-8 justify-center">
-          <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold text-lg">S</span>
-          </div>
-          <span className="text-xl font-bold text-slate-900">Stellio</span>
-        </Link>
+        <div className="flex justify-center mb-8">
+          <Logo />
+        </div>
 
         <div className="bg-white rounded-2xl p-8 shadow-sm border border-slate-100">
           {sent ? (

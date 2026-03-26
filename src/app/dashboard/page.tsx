@@ -2,7 +2,7 @@
 
 import { useSession } from "next-auth/react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import Link from "next/link";
 import Card from "@/components/ui/Card";
 import Button from "@/components/ui/Button";
@@ -15,7 +15,7 @@ interface Document {
   createdAt: string;
 }
 
-export default function DashboardPage() {
+function DashboardContent() {
   const { data: session } = useSession();
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -80,6 +80,37 @@ export default function DashboardPage() {
     green: "bg-green-100 text-green-600 group-hover:bg-green-600 group-hover:text-white",
   };
 
+  const typeIcon = (type: string) => {
+    switch (type) {
+      case "CV":
+        return (
+          <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+          </svg>
+        );
+      case "COVER_LETTER":
+        return (
+          <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+        );
+      default:
+        return (
+          <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+          </svg>
+        );
+    }
+  };
+
+  const typeColor = (type: string) => {
+    switch (type) {
+      case "CV": return "bg-blue-100 text-blue-600";
+      case "COVER_LETTER": return "bg-purple-100 text-purple-600";
+      default: return "bg-green-100 text-green-600";
+    }
+  };
+
   return (
     <div>
       {showSuccess && (
@@ -93,7 +124,7 @@ export default function DashboardPage() {
 
       <div className="mb-8">
         <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">
-          Hallo {userName}! 👋
+          Hallo {userName}!
         </h1>
         <p className="text-slate-600">
           Starte deine Bewerbung jetzt – wähle, was du erstellen möchtest.
@@ -138,18 +169,16 @@ export default function DashboardPage() {
                 onClick={() => router.push(`/dashboard/documents/${doc.id}`)}
               >
                 <div className="flex items-center gap-4">
-                  <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${
-                    doc.type === "CV" ? "bg-blue-100 text-blue-600" :
-                    doc.type === "COVER_LETTER" ? "bg-purple-100 text-purple-600" :
-                    "bg-green-100 text-green-600"
-                  }`}>
-                    {doc.type === "CV" ? "📄" : doc.type === "COVER_LETTER" ? "✉️" : "🎤"}
+                  <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${typeColor(doc.type)}`}>
+                    {typeIcon(doc.type)}
                   </div>
                   <div>
                     <p className="font-medium text-slate-900">{doc.title}</p>
                     <p className="text-xs text-slate-500">
                       {new Date(doc.createdAt).toLocaleDateString("de-DE")}
-                      {doc.isLocked && " · 🔒 Gesperrt"}
+                      {doc.isLocked && (
+                        <span className="ml-2 text-amber-600 font-medium">Gesperrt</span>
+                      )}
                     </p>
                   </div>
                 </div>
@@ -179,5 +208,17 @@ export default function DashboardPage() {
         </Card>
       )}
     </div>
+  );
+}
+
+export default function DashboardPage() {
+  return (
+    <Suspense fallback={
+      <div className="flex items-center justify-center py-20">
+        <div className="animate-spin w-8 h-8 border-2 border-blue-600 border-t-transparent rounded-full" />
+      </div>
+    }>
+      <DashboardContent />
+    </Suspense>
   );
 }

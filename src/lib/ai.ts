@@ -217,18 +217,18 @@ function generateDemoContent(prompt: string): string {
 <h1 style="color: #1e293b; border-bottom: 2px solid #2563eb; padding-bottom: 12px;">Interview Coaching – Dein persönlicher Leitfaden</h1>
 
 <section style="margin: 24px 0;">
-<h2 style="color: #2563eb;">🎯 Top 10 Interviewfragen</h2>
+<h2 style="color: #2563eb;">Top 10 Interviewfragen</h2>
 
 <div style="background: #f8fafc; padding: 16px; border-radius: 8px; margin: 12px 0;">
 <h3 style="color: #1e293b;">1. "Erzählen Sie uns von sich."</h3>
 <p style="color: #334155; line-height: 1.6;"><strong>Perfekte Antwort:</strong> "Ich bin Software Engineer mit über 5 Jahren Erfahrung in der Webentwicklung. Bei meinem aktuellen Arbeitgeber leite ich ein Team von 5 Entwicklern und habe eine erfolgreiche Plattform-Migration verantwortet. Mich treibt die Kombination aus technischer Exzellenz und echtem Business Impact an – und genau das sehe ich in dieser Position."</p>
-<p style="color: #2563eb; font-size: 14px;">💡 <em>Tipp: Halte deine Antwort unter 2 Minuten. Fokus auf relevante Highlights.</em></p>
+<p style="color: #2563eb; font-size: 14px;"><em>Tipp: Halte deine Antwort unter 2 Minuten. Fokus auf relevante Highlights.</em></p>
 </div>
 
 <div style="background: #f8fafc; padding: 16px; border-radius: 8px; margin: 12px 0;">
 <h3 style="color: #1e293b;">2. "Was ist Ihre größte Stärke?"</h3>
 <p style="color: #334155; line-height: 1.6;"><strong>Perfekte Antwort:</strong> "Meine größte Stärke ist es, komplexe technische Probleme in pragmatische Lösungen zu übersetzen. Bei der Migration unserer Plattform habe ich einen schrittweisen Ansatz gewählt, der das Risiko minimierte und gleichzeitig schnelle Ergebnisse lieferte."</p>
-<p style="color: #2563eb; font-size: 14px;">💡 <em>Tipp: Immer mit einem konkreten Beispiel belegen.</em></p>
+<p style="color: #2563eb; font-size: 14px;"><em>Tipp: Immer mit einem konkreten Beispiel belegen.</em></p>
 </div>
 
 <div style="background: #f8fafc; padding: 16px; border-radius: 8px; margin: 12px 0;">
@@ -238,7 +238,7 @@ function generateDemoContent(prompt: string): string {
 </section>
 
 <section style="margin: 24px 0;">
-<h2 style="color: #2563eb;">⭐ STAR-Methode Beispiele</h2>
+<h2 style="color: #2563eb;">STAR-Methode Beispiele</h2>
 <div style="background: #eff6ff; padding: 16px; border-radius: 8px; border-left: 4px solid #2563eb;">
 <h3>Beispiel: Plattform-Migration</h3>
 <p><strong>Situation:</strong> Legacy-Monolith mit wachsenden Performance-Problemen</p>
@@ -249,7 +249,7 @@ function generateDemoContent(prompt: string): string {
 </section>
 
 <section style="margin: 24px 0;">
-<h2 style="color: #2563eb;">❓ Intelligente Rückfragen</h2>
+<h2 style="color: #2563eb;">Intelligente Rückfragen</h2>
 <ol style="color: #334155; line-height: 2;">
 <li>Wie sieht der typische Entwicklungszyklus in Ihrem Team aus?</li>
 <li>Was sind die größten technischen Herausforderungen aktuell?</li>
@@ -260,7 +260,7 @@ function generateDemoContent(prompt: string): string {
 </section>
 
 <section style="margin: 24px 0;">
-<h2 style="color: #2563eb;">✅ Do's and Don'ts</h2>
+<h2 style="color: #2563eb;">Do's and Don'ts</h2>
 <div style="display: grid; gap: 16px;">
 <div style="background: #f0fdf4; padding: 16px; border-radius: 8px;">
 <h3 style="color: #16a34a;">Do's</h3>

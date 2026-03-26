@@ -14,7 +14,7 @@ export default function Hero() {
       </div>
 
       <div className="max-w-5xl mx-auto text-center">
-        <Badge variant="fire" className="mb-6">
+        <Badge variant="default" className="mb-6">
           Über 2.000 erfolgreiche Bewerbungen erstellt
         </Badge>
 

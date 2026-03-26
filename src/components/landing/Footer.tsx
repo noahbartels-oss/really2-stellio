@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Logo from "@/components/Logo";
 
 export default function Footer() {
   return (
@@ -6,11 +7,8 @@ export default function Footer() {
       <div className="max-w-5xl mx-auto">
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">S</span>
-              </div>
-              <span className="text-xl font-bold text-white">Stellio</span>
+            <div className="mb-4">
+              <Logo href="/" white />
             </div>
             <p className="text-sm leading-relaxed">
               Hochwertige, personalisierte Bewerbungen die wirklich funktionieren. KI-gestützt, für den deutschen Markt optimiert.
@@ -50,7 +48,7 @@ export default function Footer() {
 
         <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm">© {new Date().getFullYear()} Stellio. Alle Rechte vorbehalten.</p>
-          <p className="text-sm">Made with 💙 in Deutschland</p>
+          <p className="text-sm">Made in Deutschland</p>
         </div>
       </div>
     </footer>

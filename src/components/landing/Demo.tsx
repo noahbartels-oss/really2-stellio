@@ -7,9 +7,33 @@ export default function Demo() {
   const [activeTab, setActiveTab] = useState<"cv" | "letter" | "interview">("cv");
 
   const tabs = [
-    { key: "cv" as const, label: "Lebenslauf", icon: "📄" },
-    { key: "letter" as const, label: "Bewerbung", icon: "✉️" },
-    { key: "interview" as const, label: "Interview", icon: "🎤" },
+    {
+      key: "cv" as const,
+      label: "Lebenslauf",
+      icon: (
+        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+        </svg>
+      ),
+    },
+    {
+      key: "letter" as const,
+      label: "Bewerbung",
+      icon: (
+        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+      ),
+    },
+    {
+      key: "interview" as const,
+      label: "Interview",
+      icon: (
+        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+        </svg>
+      ),
+    },
   ];
 
   return (
@@ -30,13 +54,13 @@ export default function Demo() {
             <button
               key={tab.key}
               onClick={() => setActiveTab(tab.key)}
-              className={`px-6 py-3 rounded-xl text-sm font-medium transition-all cursor-pointer ${
+              className={`px-6 py-3 rounded-xl text-sm font-medium transition-all cursor-pointer flex items-center gap-2 ${
                 activeTab === tab.key
                   ? "bg-blue-600 text-white shadow-lg shadow-blue-600/25"
                   : "bg-white text-slate-600 hover:bg-slate-100 border border-slate-200"
               }`}
             >
-              <span className="mr-2">{tab.icon}</span>
+              {tab.icon}
               {tab.label}
             </button>
           ))}
@@ -66,7 +90,7 @@ export default function Demo() {
                     <h5 className="font-medium text-slate-900">Senior Marketing Manager</h5>
                     <p className="text-blue-600 text-sm">Digital Solutions GmbH | 2020 – Heute</p>
                     <ul className="text-sm text-slate-600 mt-2 space-y-1 list-disc list-inside">
-                      <li>Leitung eines 8-köpfigen Marketing-Teams mit Budget von 500K€</li>
+                      <li>Leitung eines 8-köpfigen Marketing-Teams mit Budget von 500K</li>
                       <li>Steigerung des organischen Traffics um 200% durch SEO-Strategie</li>
                       <li>Launch von 12 erfolgreichen Produktkampagnen mit durchschnittlich 340% ROI</li>
                     </ul>
@@ -112,7 +136,7 @@ export default function Demo() {
                 </p>
                 <p>
                   Bei der Digital Solutions GmbH leite ich ein 8-köpfiges Team und verantworte ein
-                  jährliches Budget von 500.000€. Mein größter Erfolg: die Steigerung des organischen
+                  jährliches Budget von 500.000 Euro. Mein größter Erfolg: die Steigerung des organischen
                   Traffics um 200% innerhalb von 18 Monaten durch eine von mir entwickelte
                   Content-SEO-Strategie.
                 </p>
@@ -140,8 +164,8 @@ export default function Demo() {
                     Erfahrung im digitalen Marketing. Bei meinem aktuellen Arbeitgeber leite ich ein Team
                     von 8 Mitarbeitern und habe den organischen Traffic um 200% gesteigert...&quot;
                   </p>
-                  <p className="text-blue-600 text-xs">
-                    💡 Tipp: Halte deine Antwort unter 2 Minuten. Fokus auf relevante Highlights.
+                  <p className="text-blue-600 text-xs font-medium">
+                    Tipp: Halte deine Antwort unter 2 Minuten. Fokus auf relevante Highlights.
                   </p>
                 </div>
                 <div className="bg-slate-50 rounded-xl p-5">

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { signOut } from "next-auth/react";
+import Logo from "@/components/Logo";
 import { cn } from "@/lib/utils";
 
 interface DashboardNavProps {
@@ -19,12 +20,7 @@ export default function DashboardNav({ user }: DashboardNavProps) {
     <nav className="bg-white border-b border-slate-200">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link href="/dashboard" className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">S</span>
-            </div>
-            <span className="text-xl font-bold text-slate-900">Stellio</span>
-          </Link>
+          <Logo href="/dashboard" />
 
           <div className="flex items-center gap-4">
             <Link

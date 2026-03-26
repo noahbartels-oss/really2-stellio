@@ -18,7 +18,7 @@ export default function Pricing() {
       highlighted: false,
     },
     {
-      name: "Beliebt 🔥",
+      name: "Beliebt",
       price: "17,99€",
       originalPrice: "29,99€",
       description: "Komplettpaket für deinen Job",
@@ -76,7 +76,7 @@ export default function Pricing() {
             >
               {plan.badge && (
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                  <Badge variant="fire">{plan.badge}</Badge>
+                  <Badge variant="default">{plan.badge}</Badge>
                 </div>
               )}
 
