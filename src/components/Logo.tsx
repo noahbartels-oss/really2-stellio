@@ -22,24 +22,30 @@ function LogoIcon({ size = "md", white = false }: { size?: string; white?: boole
       xmlns="http://www.w3.org/2000/svg"
       className={sizeClasses[size as keyof typeof sizeClasses]}
     >
-      <rect width="40" height="40" rx="10" fill={white ? "rgba(255,255,255,0.15)" : "url(#logo-gradient)"} />
-      {/* Star / compass shape representing guidance */}
-      <path
-        d="M20 8L23.5 16.5L32 20L23.5 23.5L20 32L16.5 23.5L8 20L16.5 16.5L20 8Z"
-        fill={white ? "white" : "white"}
-        fillOpacity={white ? "1" : "0.95"}
-      />
-      {/* Inner diamond for depth */}
-      <path
-        d="M20 14L22.5 17.5L26 20L22.5 22.5L20 26L17.5 22.5L14 20L17.5 17.5L20 14Z"
-        fill={white ? "rgba(255,255,255,0.15)" : "url(#logo-gradient)"}
-      />
+      {/* Background */}
+      <rect width="40" height="40" rx="8" fill={white ? "rgba(255,255,255,0.1)" : "transparent"} />
+
+      {/* White left chevron */}
+      <g>
+        <path
+          d="M8 20L16 12L18 14L12 20L18 26L16 28L8 20Z"
+          fill={white ? "rgba(255,255,255,0.9)" : "white"}
+        />
+      </g>
+
+      {/* Blue right chevron with gradient */}
       <defs>
-        <linearGradient id="logo-gradient" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#2563eb" />
-          <stop offset="1" stopColor="#7c3aed" />
+        <linearGradient id="chevron-gradient" x1="20" y1="10" x2="32" y2="30" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stopColor="#60a5fa" />
+          <stop offset="1" stopColor="#0ea5e9" />
         </linearGradient>
       </defs>
+      <g>
+        <path
+          d="M22 20L30 12L32 14L26 20L32 26L30 28L22 20Z"
+          fill={white ? "rgba(255,255,255,0.8)" : "url(#chevron-gradient)"}
+        />
+      </g>
     </svg>
   );
 }
