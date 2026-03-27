@@ -22,9 +22,9 @@ export default function Pricing() {
     },
     {
       name: "Komplettpaket",
-      price: "19,99",
+      price: "14,99",
       originalPrice: "22,77",
-      savings: "Über 2 Euro sparen",
+      savings: "Über 7 Euro sparen",
       description: "CV + Anschreiben + Interview Coaching",
       features: [
         "Professioneller Lebenslauf",

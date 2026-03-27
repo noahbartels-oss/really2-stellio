@@ -39,8 +39,8 @@ export const PRODUCTS = {
   },
   PRO_BUNDLE: {
     name: "Komplettpaket",
-    price: 1999,
-    displayPrice: "19,99€",
+    price: 1499,
+    displayPrice: "14,99€",
     originalPrice: "22,77€",
     description: "Lebenslauf + Anschreiben + Interview",
     highlighted: true,
