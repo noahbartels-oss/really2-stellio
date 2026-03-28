@@ -20,9 +20,9 @@ export default function Solution() {
     },
     {
       number: "02",
-      title: "KI erstellt deine Unterlagen",
+      title: "Perfekt auf die Stelle zugeschnitten",
       description:
-        "Unsere KI analysiert dein Profil und erstellt maßgeschneiderte Dokumente – individuell formuliert, ATS-optimiert, im deutschen Bewerbungsstandard.",
+        "Unsere KI erstellt Unterlagen, die klingen, als hätte ein Bewerbungsberater sie geschrieben – individuell auf die Stelle abgestimmt, für Recruiter optimiert und ATS-konform. Kein generischer Text.",
       detail: "Lebenslauf, Anschreiben oder Interview-Coaching",
       color: "purple",
       icon: (

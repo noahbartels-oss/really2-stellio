@@ -21,17 +21,17 @@ export default function Hero() {
           </Badge>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 mb-6 leading-[1.1]">
-            Dein Traumjob wartet.
+            Schluss mit Absagen.
             <br />
-            <span className="gradient-text">Deine Bewerbung ist in 5 Minuten fertig.</span>
+            <span className="gradient-text">Hol dir Einladungen zum Gespräch.</span>
           </h1>
 
           <p className="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto mb-4 leading-relaxed">
-            Stellio erstellt <strong className="text-slate-800">individuell auf dich zugeschnittene</strong> Lebensläufe,
-            Anschreiben und Interview-Coaching – optimiert für den deutschsprachigen Arbeitsmarkt.
+            Stellio erstellt <strong className="text-slate-800">Bewerbungen, die Recruiter überzeugen</strong> – individueller Lebenslauf,
+            maßgeschneidertes Anschreiben und persönliches Interview-Coaching. In unter 5 Minuten.
           </p>
           <p className="text-base text-slate-500 max-w-xl mx-auto mb-10">
-            Kein generischer KI-Text. Kein Copy-Paste. Bewerbungen, die Recruiter überzeugen und ATS-Filter bestehen.
+            Kein generischer KI-Text. Kein Prompt-Wissen nötig. Optimiert für ATS-Systeme und den DACH-Arbeitsmarkt.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
@@ -47,14 +47,18 @@ export default function Hero() {
             </a>
           </div>
 
-          <div className="flex items-center justify-center gap-6 text-sm text-slate-500 mb-14">
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-slate-500 mb-14">
             <span className="flex items-center gap-1.5">
               <svg className="w-4 h-4 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
               Kostenlose Vorschau
             </span>
             <span className="flex items-center gap-1.5">
               <svg className="w-4 h-4 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-              Keine Kreditkarte
+              Keine Kreditkarte nötig
+            </span>
+            <span className="flex items-center gap-1.5">
+              <svg className="w-4 h-4 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+              Sofort einsatzbereit
             </span>
             <span className="flex items-center gap-1.5">
               <svg className="w-4 h-4 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>

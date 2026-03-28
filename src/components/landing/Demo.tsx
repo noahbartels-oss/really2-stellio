@@ -42,10 +42,11 @@ export default function Demo() {
         <div className="text-center mb-12">
           <p className="text-sm font-semibold text-blue-600 uppercase tracking-wider mb-3">Live-Beispiel</p>
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
-            Das ist Stellio-Qualität
+            So sieht eine erfolgreiche Bewerbung aus
           </h2>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            Kein generischer Text. Keine Vorlage. Jede Bewerbung wird individuell auf das Profil und die Zielposition zugeschnitten.
+            Jedes Dokument ist <strong className="text-slate-800">individuell auf dein Profil und die Zielposition zugeschnitten</strong>,
+            ATS-optimiert und im deutschen Bewerbungsstandard formatiert. Kein generischer Text. Keine Vorlage.
           </p>
         </div>
 
