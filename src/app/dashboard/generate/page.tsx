@@ -1,11 +1,22 @@
 "use client";
 
-import { useState, useEffect, Suspense } from "react";
+import { useState, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import Button from "@/components/ui/Button";
 import Input from "@/components/ui/Input";
 import Card from "@/components/ui/Card";
 import ProgressBar from "@/components/ui/ProgressBar";
+import SearchSelect from "@/components/ui/SearchSelect";
+import {
+  BERUFE,
+  BRANCHEN,
+  AUSBILDUNGEN,
+  SPRACHEN,
+  LAENDER,
+  BUNDESLAENDER_AT,
+  BUNDESLAENDER_DE,
+  KANTONE_CH,
+} from "@/lib/form-options";
 
 function GenerateContent() {
   const searchParams = useSearchParams();
@@ -19,12 +30,18 @@ function GenerateContent() {
   const [formData, setFormData] = useState({
     fullName: "",
     jobTitle: "",
+    branche: "",
     experience: "",
     skills: "",
     education: "",
     targetJob: "",
     languages: "",
+    land: "",
+    region: "",
   });
+
+  // Selected languages as array for multi-select
+  const [selectedLanguages, setSelectedLanguages] = useState<string[]>([]);
 
   const typeLabels: Record<string, string> = {
     cv: "Lebenslauf",
@@ -36,6 +53,34 @@ function GenerateContent() {
 
   const updateField = (field: string, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
+  };
+
+  const addLanguage = (lang: string) => {
+    if (lang && !selectedLanguages.includes(lang)) {
+      const updated = [...selectedLanguages, lang];
+      setSelectedLanguages(updated);
+      setFormData((prev) => ({ ...prev, languages: updated.join(", ") }));
+    }
+  };
+
+  const removeLanguage = (lang: string) => {
+    const updated = selectedLanguages.filter((l) => l !== lang);
+    setSelectedLanguages(updated);
+    setFormData((prev) => ({ ...prev, languages: updated.join(", ") }));
+  };
+
+  // Get region options based on selected country
+  const getRegionOptions = () => {
+    switch (formData.land) {
+      case "Österreich":
+        return BUNDESLAENDER_AT;
+      case "Deutschland":
+        return BUNDESLAENDER_DE;
+      case "Schweiz":
+        return KANTONE_CH;
+      default:
+        return [...BUNDESLAENDER_AT, ...BUNDESLAENDER_DE, ...KANTONE_CH];
+    }
   };
 
   const handleGenerate = async () => {
@@ -112,28 +157,94 @@ function GenerateContent() {
               onChange={(e) => updateField("fullName", e.target.value)}
               required
             />
-            <Input
+            <SearchSelect
               id="jobTitle"
               label="Aktuelle Position / Berufsbezeichnung"
-              placeholder="z.B. Software Engineer, Marketing Manager"
+              placeholder="Suche: z.B. Software Engineer, Verkäufer/in..."
+              options={BERUFE}
               value={formData.jobTitle}
-              onChange={(e) => updateField("jobTitle", e.target.value)}
+              onChange={(v) => updateField("jobTitle", v)}
               required
+              allowCustom
             />
-            <Input
+            <SearchSelect
+              id="branche"
+              label="Branche"
+              placeholder="Suche: z.B. IT, Marketing, Gesundheitswesen..."
+              options={BRANCHEN}
+              value={formData.branche}
+              onChange={(v) => updateField("branche", v)}
+              allowCustom
+            />
+            <SearchSelect
               id="education"
-              label="Ausbildung / Studium"
-              placeholder="z.B. B.Sc. Informatik, TU Berlin"
+              label="Höchster Bildungsabschluss"
+              placeholder="Suche: z.B. Bachelor, Lehre, Matura..."
+              options={AUSBILDUNGEN}
               value={formData.education}
-              onChange={(e) => updateField("education", e.target.value)}
+              onChange={(v) => updateField("education", v)}
+              allowCustom
             />
-            <Input
-              id="languages"
-              label="Sprachen"
-              placeholder="z.B. Deutsch (Muttersprache), Englisch (Verhandlungssicher)"
-              value={formData.languages}
-              onChange={(e) => updateField("languages", e.target.value)}
-            />
+
+            {/* Languages multi-select */}
+            <div>
+              <label className="block text-sm font-medium text-slate-700 mb-1.5">
+                Sprachen
+              </label>
+              {selectedLanguages.length > 0 && (
+                <div className="flex flex-wrap gap-2 mb-2">
+                  {selectedLanguages.map((lang) => (
+                    <span
+                      key={lang}
+                      className="inline-flex items-center gap-1 px-3 py-1 bg-blue-50 text-blue-700 text-sm rounded-lg border border-blue-100"
+                    >
+                      {lang}
+                      <button
+                        type="button"
+                        onClick={() => removeLanguage(lang)}
+                        className="text-blue-400 hover:text-blue-700 transition-colors cursor-pointer ml-1"
+                      >
+                        <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                      </button>
+                    </span>
+                  ))}
+                </div>
+              )}
+              <SearchSelect
+                id="languages"
+                placeholder="Sprache hinzufügen: z.B. Deutsch, Englisch..."
+                options={SPRACHEN.filter((s) => !selectedLanguages.includes(s))}
+                value=""
+                onChange={(v) => addLanguage(v)}
+                allowCustom
+              />
+            </div>
+
+            <div className="grid grid-cols-2 gap-4">
+              <SearchSelect
+                id="land"
+                label="Land"
+                placeholder="Land wählen"
+                options={LAENDER}
+                value={formData.land}
+                onChange={(v) => {
+                  updateField("land", v);
+                  updateField("region", "");
+                }}
+                allowCustom={false}
+              />
+              <SearchSelect
+                id="region"
+                label="Region / Bundesland"
+                placeholder="Region wählen"
+                options={getRegionOptions()}
+                value={formData.region}
+                onChange={(v) => updateField("region", v)}
+                allowCustom
+              />
+            </div>
           </div>
         )}
 
@@ -175,18 +286,20 @@ function GenerateContent() {
         {currentStep === 2 && (
           <div className="space-y-6">
             <h2 className="text-lg font-semibold text-slate-900">Zielposition</h2>
-            <Input
+            <SearchSelect
               id="targetJob"
               label="Auf welche Position bewirbst du dich?"
-              placeholder="z.B. Senior Software Engineer bei Firma XY"
+              placeholder="Suche: z.B. Marketing Manager, Software Engineer..."
+              options={BERUFE}
               value={formData.targetJob}
-              onChange={(e) => updateField("targetJob", e.target.value)}
+              onChange={(v) => updateField("targetJob", v)}
               required
+              allowCustom
             />
             <div className="bg-blue-50 rounded-xl p-4">
               <p className="text-sm text-blue-700">
                 <strong>Tipp:</strong> Je spezifischer du die Zielposition beschreibst, desto besser kann unsere KI
-                deine Bewerbung darauf zuschneiden. Nenne am besten den genauen Jobtitel und optional das Unternehmen.
+                deine Bewerbung darauf zuschneiden. Du kannst auch den genauen Jobtitel und das Unternehmen angeben.
               </p>
             </div>
 
@@ -196,6 +309,10 @@ function GenerateContent() {
               <div className="space-y-2 text-sm text-slate-600">
                 <p><strong>Name:</strong> {formData.fullName}</p>
                 <p><strong>Position:</strong> {formData.jobTitle}</p>
+                {formData.branche && <p><strong>Branche:</strong> {formData.branche}</p>}
+                {formData.education && <p><strong>Ausbildung:</strong> {formData.education}</p>}
+                {formData.land && <p><strong>Standort:</strong> {formData.region ? `${formData.region}, ` : ""}{formData.land}</p>}
+                {formData.languages && <p><strong>Sprachen:</strong> {formData.languages}</p>}
                 <p><strong>Ziel:</strong> {formData.targetJob}</p>
                 <p><strong>Dokument:</strong> {typeLabels[type]}</p>
               </div>
