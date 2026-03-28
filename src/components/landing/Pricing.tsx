@@ -8,7 +8,9 @@ export default function Pricing() {
   const plans = [
     {
       name: "Starter",
-      price: "9,99",
+      price: "4,99",
+      originalPrice: "9,99",
+      savings: "50% gespart",
       description: "Perfektes Bewerbungsschreiben",
       features: [
         "Individuelles Anschreiben",
@@ -22,9 +24,9 @@ export default function Pricing() {
     },
     {
       name: "Pro",
-      price: "14,99",
-      originalPrice: "24,98",
-      savings: "Über 10 Euro sparen",
+      price: "7,49",
+      originalPrice: "14,99",
+      savings: "50% gespart",
       bonus: "+ GRATIS Interview Coaching",
       description: "Lebenslauf + Anschreiben + Coaching",
       features: [
@@ -37,11 +39,13 @@ export default function Pricing() {
       ],
       cta: "Bestes Angebot wählen",
       highlighted: true,
-      badge: "BELIEBT",
+      badge: "50% RABATT",
     },
     {
       name: "Lebenslauf",
-      price: "9,99",
+      price: "4,99",
+      originalPrice: "9,99",
+      savings: "50% gespart",
       description: "ATS-optimierter Lebenslauf",
       features: [
         "Professioneller Lebenslauf",
@@ -59,6 +63,10 @@ export default function Pricing() {
     <section id="pricing" className="py-24 px-4 bg-slate-50/50">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-16">
+          <div className="inline-flex items-center gap-2 bg-red-50 border border-red-200 rounded-full px-5 py-2 mb-6">
+            <svg className="w-5 h-5 text-red-500 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            <span className="text-sm font-bold text-red-600">LAUNCH-AKTION: 50% auf alles – nur für kurze Zeit</span>
+          </div>
           <p className="text-sm font-semibold text-blue-600 uppercase tracking-wider mb-3">Preise</p>
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
             Investiere in deine Karriere
@@ -66,7 +74,7 @@ export default function Pricing() {
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
             Einmalige Zahlung. Kein Abo. Kein Kleingedrucktes.
             <br />
-            <strong className="text-slate-800">Günstiger als eine Tasse Kaffee pro Bewerbung.</strong>
+            <strong className="text-slate-800">Jetzt zum halben Preis starten.</strong>
           </p>
         </div>
 
