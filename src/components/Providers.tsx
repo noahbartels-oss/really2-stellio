@@ -15,6 +15,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
             currency: "EUR",
             intent: "capture",
           }}
+          deferLoading={false}
         >
           {children}
         </PayPalScriptProvider>

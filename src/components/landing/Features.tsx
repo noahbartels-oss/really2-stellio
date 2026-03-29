@@ -6,9 +6,9 @@ import Button from "@/components/ui/Button";
 export default function Features() {
   const features = [
     {
-      title: "Individuell, nicht generisch",
+      title: "Auf dich zugeschnitten",
       description:
-        "Jedes Dokument basiert auf deinem Profil, deiner Erfahrung und deiner Zielposition. Kein Copy-Paste, keine Textbausteine – jede Bewerbung ist ein Unikat.",
+        "Jedes Dokument wird individuell für dich erstellt. Keine Textbausteine, keine Templates. Dein Profil, deine Erfahrung, dein Unikat.",
       icon: (
         <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
@@ -16,9 +16,9 @@ export default function Features() {
       ),
     },
     {
-      title: "ATS-Filter bestehen",
+      title: "Übersteht jeden ATS-Filter",
       description:
-        "Über 75% der Unternehmen nutzen Bewerbungssoftware. Unsere Formate sind so strukturiert, dass sie jedes ATS-System passieren – deine Bewerbung wird gelesen.",
+        "75% der Firmen filtern Bewerbungen automatisch. Unsere Formate sind so gebaut, dass sie durchkommen – immer.",
       icon: (
         <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
@@ -26,9 +26,9 @@ export default function Features() {
       ),
     },
     {
-      title: "Deutscher Standard (DACH)",
+      title: "DACH-Standard",
       description:
-        "DIN 5008 konforme Anschreiben, professionelle Lebensläufe nach deutschem, österreichischem und Schweizer Standard. Perfekt für den DACH-Arbeitsmarkt.",
+        "DIN 5008 Anschreiben, Lebensläufe nach deutschem, österreichischem und Schweizer Standard. Kein US-Format, kein Bullshit.",
       icon: (
         <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9" />
@@ -36,9 +36,9 @@ export default function Features() {
       ),
     },
     {
-      title: "Interview-Coaching inklusive",
+      title: "Interview-Coaching",
       description:
-        "Die wahrscheinlichsten Fragen mit perfekten Antwortvorschlägen, STAR-Methode und konkreten Tipps. Wie ein persönlicher Karriere-Coach.",
+        "Die wahrscheinlichsten Fragen mit Antwortvorschlägen, STAR-Methode und konkreten Tipps. Wie ein persönlicher Coach.",
       icon: (
         <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
@@ -46,9 +46,9 @@ export default function Features() {
       ),
     },
     {
-      title: "Fertig in 5 Minuten",
+      title: "Sofort einsatzbereit",
       description:
-        "Kein stundenlanger Aufwand. Profil ausfüllen, Position eingeben – fertig. Deine professionellen Unterlagen sind sofort als PDF verfügbar.",
+        "Profil ausfüllen, Position eingeben – fertig. Deine Unterlagen stehen sofort als PDF zum Download bereit.",
       icon: (
         <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -56,9 +56,9 @@ export default function Features() {
       ),
     },
     {
-      title: "Professionelle Qualität",
+      title: "Klingt wie von einem Profi",
       description:
-        "Kein KI-Kauderwelsch. Jede Bewerbung klingt authentisch, überzeugend und professionell – als hätte ein erfahrener Bewerbungsberater sie geschrieben.",
+        "Kein KI-Kauderwelsch. Jede Bewerbung klingt authentisch und professionell. Kein Recruiter merkt, dass eine KI geholfen hat.",
       icon: (
         <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
@@ -73,12 +73,12 @@ export default function Features() {
         <div className="text-center mb-16">
           <p className="text-sm font-semibold text-blue-600 uppercase tracking-wider mb-3">Warum Stellio</p>
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
-            Nicht ChatGPT. Nicht eine Vorlage.
+            Das ist kein ChatGPT.
             <br />
-            <span className="gradient-text">Dein persönlicher Bewerbungsberater.</span>
+            <span className="gradient-text">Das ist dein Bewerbungsberater.</span>
           </h2>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            Stellio wurde speziell für den deutschsprachigen Arbeitsmarkt entwickelt – mit Fokus auf Ergebnisse, nicht auf Features.
+            Speziell für den DACH-Arbeitsmarkt gebaut. Mit einem Ziel: Dir Einladungen zum Gespräch holen.
           </p>
         </div>
 
@@ -86,7 +86,7 @@ export default function Features() {
           {features.map((feature) => (
             <div
               key={feature.title}
-              className="group p-6 rounded-2xl border border-slate-100 hover:border-blue-200 hover:bg-gradient-to-br hover:from-blue-50/50 hover:to-purple-50/30 transition-all duration-300 hover:shadow-md"
+              className="group p-6 rounded-2xl border border-slate-100 hover:border-blue-200 hover:bg-gradient-to-br hover:from-blue-50/50 hover:to-indigo-50/30 transition-all duration-300 hover:shadow-md"
             >
               <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 mb-4 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 group-hover:shadow-lg group-hover:shadow-blue-600/25">
                 {feature.icon}
@@ -99,10 +99,10 @@ export default function Features() {
 
         {/* Comparison */}
         <div className="mt-20">
-          <h3 className="text-2xl font-bold text-slate-900 text-center mb-4">
+          <h3 className="text-2xl font-bold text-slate-900 text-center mb-2">
             Der Unterschied auf einen Blick
           </h3>
-          <p className="text-center text-slate-500 mb-10">Warum Stellio die bessere Wahl ist</p>
+          <p className="text-center text-slate-500 mb-10">Spoiler: Es gibt keinen Vergleich.</p>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
@@ -152,7 +152,7 @@ export default function Features() {
 
         <div className="mt-12 text-center">
           <Link href="/auth/signup">
-            <Button size="lg">Jetzt Bewerbung erstellen</Button>
+            <Button size="lg">Jetzt selbst überzeugen</Button>
           </Link>
         </div>
       </div>

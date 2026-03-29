@@ -10,34 +10,34 @@ export default function Hero() {
       {/* Background decoration */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-20 left-1/4 w-96 h-96 bg-blue-50 rounded-full mix-blend-multiply filter blur-3xl opacity-70" />
-        <div className="absolute top-40 right-1/4 w-96 h-96 bg-purple-50 rounded-full mix-blend-multiply filter blur-3xl opacity-70" />
+        <div className="absolute top-40 right-1/4 w-96 h-96 bg-indigo-50 rounded-full mix-blend-multiply filter blur-3xl opacity-50" />
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
       </div>
 
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <Badge variant="success" className="mb-6 animate-fade-in">
-            Bereits 1.000+ Bewerbungen erstellt
+            Über 1.000 erstellte Bewerbungen im DACH-Raum
           </Badge>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 mb-6 leading-[1.1]">
-            Schluss mit Absagen.
+            Du wirst nicht abgelehnt,
             <br />
-            <span className="gradient-text">Hol dir Einladungen zum Gespräch.</span>
+            <span className="gradient-text">weil du schlecht bist.</span>
           </h1>
 
-          <p className="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto mb-4 leading-relaxed">
-            Stellio erstellt <strong className="text-slate-800">Bewerbungen, die Recruiter überzeugen</strong> – individueller Lebenslauf,
-            maßgeschneidertes Anschreiben und persönliches Interview-Coaching. In unter 5 Minuten.
+          <p className="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto mb-3 leading-relaxed">
+            Sondern weil deine Bewerbung nicht trifft. <strong className="text-slate-800">Stellio macht das anders</strong> –
+            Lebenslauf, Anschreiben und Interview-Coaching, die Recruiter wirklich lesen wollen.
           </p>
           <p className="text-base text-slate-500 max-w-xl mx-auto mb-10">
-            Kein generischer KI-Text. Kein Prompt-Wissen nötig. Optimiert für ATS-Systeme und den DACH-Arbeitsmarkt.
+            Kein ChatGPT Copy-Paste. Kein Template-Müll. Echte Qualität für den DACH-Arbeitsmarkt.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-4">
             <Link href="/auth/signup">
               <Button size="lg" className="pulse-cta text-lg px-10 py-5">
-                Jetzt Bewerbung erstellen
+                Bewerbung erstellen
               </Button>
             </Link>
             <a href="#demo">
@@ -46,37 +46,34 @@ export default function Hero() {
               </Button>
             </a>
           </div>
+          <p className="text-sm text-slate-400 mb-14">Kein Abo. Kostenlose Vorschau. Zahlung erst wenn du zufrieden bist.</p>
 
           <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-slate-500 mb-14">
             <span className="flex items-center gap-1.5">
               <svg className="w-4 h-4 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-              Kostenlose Vorschau
+              ATS-optimiert
             </span>
             <span className="flex items-center gap-1.5">
               <svg className="w-4 h-4 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-              Keine Kreditkarte nötig
+              Individuell auf dich zugeschnitten
             </span>
             <span className="flex items-center gap-1.5">
               <svg className="w-4 h-4 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-              Sofort einsatzbereit
-            </span>
-            <span className="flex items-center gap-1.5">
-              <svg className="w-4 h-4 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-              In 5 Minuten fertig
+              DACH-Standard (DIN 5008)
             </span>
           </div>
         </div>
 
         {/* Hero Preview Mock */}
         <div className="relative max-w-4xl mx-auto">
-          <div className="absolute -inset-4 bg-gradient-to-r from-blue-600/20 via-purple-600/20 to-blue-600/20 rounded-3xl blur-2xl opacity-60" />
+          <div className="absolute -inset-4 bg-gradient-to-r from-blue-600/20 via-indigo-600/15 to-blue-600/20 rounded-3xl blur-2xl opacity-60" />
           <div className="relative bg-white rounded-2xl shadow-2xl border border-slate-200/80 overflow-hidden">
             {/* Browser chrome */}
             <div className="flex items-center gap-2 px-4 py-3 bg-slate-50 border-b border-slate-100">
               <div className="flex gap-1.5">
-                <div className="w-3 h-3 rounded-full bg-slate-200" />
-                <div className="w-3 h-3 rounded-full bg-slate-200" />
-                <div className="w-3 h-3 rounded-full bg-slate-200" />
+                <div className="w-3 h-3 rounded-full bg-red-300" />
+                <div className="w-3 h-3 rounded-full bg-amber-300" />
+                <div className="w-3 h-3 rounded-full bg-green-300" />
               </div>
               <div className="flex-1 flex justify-center">
                 <div className="bg-white rounded-lg px-4 py-1 text-xs text-slate-400 border border-slate-100 w-64 text-center">
@@ -128,12 +125,12 @@ export default function Hero() {
               {/* Cover Letter Preview */}
               <div className="p-6 sm:p-8">
                 <div className="flex items-center gap-2 mb-4">
-                  <div className="w-2 h-2 rounded-full bg-purple-500" />
-                  <span className="text-xs font-semibold text-purple-600 uppercase tracking-wider">Anschreiben</span>
+                  <div className="w-2 h-2 rounded-full bg-indigo-500" />
+                  <span className="text-xs font-semibold text-indigo-600 uppercase tracking-wider">Anschreiben</span>
                 </div>
                 <div className="space-y-3">
                   <div className="text-right">
-                    <p className="text-xs text-slate-400">Wien, den 26. März 2026</p>
+                    <p className="text-xs text-slate-400">Wien, den 29. März 2026</p>
                   </div>
                   <h5 className="text-sm font-semibold text-slate-900">
                     Bewerbung als Senior Software Engineer
@@ -160,7 +157,7 @@ export default function Hero() {
             </div>
 
             {/* Bottom bar */}
-            <div className="bg-gradient-to-r from-blue-50 to-purple-50 border-t border-slate-100 px-6 py-3 flex items-center justify-between">
+            <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border-t border-slate-100 px-6 py-3 flex items-center justify-between">
               <div className="flex items-center gap-4">
                 <span className="flex items-center gap-1.5 text-xs text-green-600 font-medium">
                   <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
@@ -186,11 +183,11 @@ export default function Hero() {
                   className="w-9 h-9 rounded-full border-2 border-white flex items-center justify-center text-white text-xs font-bold shadow-sm"
                   style={{
                     background: [
+                      "linear-gradient(135deg, #3b82f6, #4f46e5)",
+                      "linear-gradient(135deg, #6366f1, #7c3aed)",
+                      "linear-gradient(135deg, #4f46e5, #3b82f6)",
+                      "linear-gradient(135deg, #7c3aed, #6366f1)",
                       "linear-gradient(135deg, #3b82f6, #6366f1)",
-                      "linear-gradient(135deg, #8b5cf6, #a855f7)",
-                      "linear-gradient(135deg, #6366f1, #3b82f6)",
-                      "linear-gradient(135deg, #a855f7, #8b5cf6)",
-                      "linear-gradient(135deg, #3b82f6, #8b5cf6)",
                     ][i],
                   }}
                 >
@@ -214,12 +211,8 @@ export default function Hero() {
 
           <div className="flex items-center gap-6 text-sm text-slate-500">
             <span className="flex items-center gap-2">
-              <svg className="w-5 h-5 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
-              14 Tage Geld-zurück
-            </span>
-            <span className="flex items-center gap-2">
               <svg className="w-5 h-5 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
-              Sichere Zahlung
+              Sichere Zahlung via PayPal
             </span>
           </div>
         </div>

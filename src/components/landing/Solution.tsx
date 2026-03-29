@@ -7,9 +7,9 @@ export default function Solution() {
   const steps = [
     {
       number: "01",
-      title: "Profil & Zielposition eingeben",
+      title: "Profil eingeben",
       description:
-        "Beantworte ein paar einfache Fragen zu deiner Erfahrung und dem Job, den du willst. Dauert unter 5 Minuten – kein kompliziertes Formular.",
+        "Ein paar Fragen zu dir und dem Job, den du willst. Kein langes Formular, kein Lebenslauf hochladen.",
       detail: "Name, Erfahrung, Skills, Zielposition",
       color: "blue",
       icon: (
@@ -20,10 +20,10 @@ export default function Solution() {
     },
     {
       number: "02",
-      title: "Perfekt auf die Stelle zugeschnitten",
+      title: "KI erstellt deine Unterlagen",
       description:
-        "Unsere KI erstellt Unterlagen, die klingen, als hätte ein Bewerbungsberater sie geschrieben – individuell auf die Stelle abgestimmt, für Recruiter optimiert und ATS-konform. Kein generischer Text.",
-      detail: "Lebenslauf, Anschreiben oder Interview-Coaching",
+        "Stellio generiert Dokumente, die klingen, als hätte ein Bewerbungsberater sie geschrieben. Individuell, nicht generisch. Recruiter-ready.",
+      detail: "Lebenslauf, Anschreiben oder Coaching",
       color: "purple",
       icon: (
         <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -33,9 +33,9 @@ export default function Solution() {
     },
     {
       number: "03",
-      title: "Herunterladen & bewerben",
+      title: "Downloaden & bewerben",
       description:
-        "Deine fertige Bewerbung als PDF – bereit zum Versenden. Professionell formatiert, überzeugend geschrieben und bereit für deinen Traumjob.",
+        "PDF runterladen, absenden, fertig. Professionell formatiert und bereit für deinen nächsten Job.",
       detail: "PDF-Download, sofort einsatzbereit",
       color: "green",
       icon: (
@@ -48,7 +48,7 @@ export default function Solution() {
 
   const colorMap: Record<string, { bg: string; text: string; line: string; number: string }> = {
     blue: { bg: "bg-blue-100", text: "text-blue-600", line: "bg-blue-200", number: "text-blue-600" },
-    purple: { bg: "bg-purple-100", text: "text-purple-600", line: "bg-purple-200", number: "text-purple-600" },
+    purple: { bg: "bg-indigo-100", text: "text-indigo-600", line: "bg-indigo-200", number: "text-indigo-600" },
     green: { bg: "bg-green-100", text: "text-green-600", line: "bg-green-200", number: "text-green-600" },
   };
 
@@ -56,19 +56,19 @@ export default function Solution() {
     <section id="how-it-works" className="py-24 px-4">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-16">
-          <p className="text-sm font-semibold text-blue-600 uppercase tracking-wider mb-3">So funktioniert&apos;s</p>
+          <p className="text-sm font-semibold text-blue-600 uppercase tracking-wider mb-3">So einfach geht&apos;s</p>
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
-            In 3 Schritten zur <span className="gradient-text">perfekten Bewerbung</span>
+            Drei Schritte. <span className="gradient-text">Ein Ergebnis.</span>
           </h2>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            Kein komplizierter Prozess. Kein stundenlanges Formatieren.
-            Von der Eingabe bis zur fertigen Bewerbung in unter 5 Minuten.
+            Kein stundenlanges Formatieren. Kein Prompt-Engineering.
+            Du gibst ein, was du kannst – Stellio macht den Rest.
           </p>
         </div>
 
         <div className="relative">
           {/* Connection line */}
-          <div className="hidden md:block absolute top-24 left-[16.7%] right-[16.7%] h-0.5 bg-gradient-to-r from-blue-200 via-purple-200 to-green-200" />
+          <div className="hidden md:block absolute top-24 left-[16.7%] right-[16.7%] h-0.5 bg-gradient-to-r from-blue-200 via-indigo-200 to-green-200" />
 
           <div className="grid md:grid-cols-3 gap-8">
             {steps.map((step) => {
@@ -98,7 +98,7 @@ export default function Solution() {
 
         <div className="mt-16 text-center">
           <Link href="/auth/signup">
-            <Button size="lg" className="px-10">Jetzt Bewerbung erstellen</Button>
+            <Button size="lg" className="px-10">Jetzt ausprobieren</Button>
           </Link>
           <p className="text-sm text-slate-500 mt-3">Kostenlose Vorschau – Zahlung erst nach Zufriedenheit</p>
         </div>

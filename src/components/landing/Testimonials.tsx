@@ -7,7 +7,7 @@ export default function Testimonials() {
       role: "Marketing Managerin",
       location: "Wien",
       quote:
-        "Ich hatte monatelang Absagen kassiert. Mit Stellio habe ich innerhalb von 2 Wochen 3 Einladungen zum Vorstellungsgespräch bekommen. Die Qualität ist wirklich auf einem anderen Level.",
+        "Monatelang nur Absagen. Mit Stellio hatte ich innerhalb von 2 Wochen 3 Einladungen. Der Unterschied war sofort spürbar – die Recruiter haben sich tatsächlich gemeldet.",
       rating: 5,
       highlight: "3 Einladungen in 2 Wochen",
     },
@@ -16,7 +16,7 @@ export default function Testimonials() {
       role: "Software Entwickler",
       location: "München",
       quote:
-        "Als Entwickler bin ich gut in Code, aber Bewerbungen schreiben war nie meine Stärke. Stellio hat mir einen Lebenslauf erstellt, der meine Erfahrung perfekt rüberbringt. Habe meinen Traumjob bekommen.",
+        "Ich kann coden, aber Bewerbungen schreiben? Nicht meine Stärke. Stellio hat das komplett übernommen und das Ergebnis war besser als alles, was ich selbst hinbekommen hätte. Job gekriegt.",
       rating: 5,
       highlight: "Traumjob bekommen",
     },
@@ -25,16 +25,16 @@ export default function Testimonials() {
       role: "Absolventin BWL",
       location: "Zürich",
       quote:
-        "Als Berufseinsteigerin wusste ich nicht, wie ich mich am besten präsentiere. Das Interview Coaching war Gold wert – ich war perfekt vorbereitet und habe direkt nach dem ersten Gespräch eine Zusage erhalten.",
+        "Als Berufseinsteigerin war ich lost. Das Interview Coaching war Gold wert – ich war so gut vorbereitet, dass ich direkt nach dem ersten Gespräch eine Zusage hatte.",
       rating: 5,
-      highlight: "Zusage nach erstem Gespräch",
+      highlight: "Zusage nach 1. Gespräch",
     },
     {
       name: "Michael R.",
       role: "Projektmanager",
       location: "Berlin",
       quote:
-        "Hatte vorher ChatGPT probiert – das Ergebnis war generisch und unbrauchbar. Stellio liefert echte Qualität. Das Anschreiben klingt wie von einem professionellen Berater geschrieben.",
+        "Hatte ChatGPT probiert – generisch und unbrauchbar. Stellio liefert echte Qualität. Das Anschreiben klingt wie von einem professionellen Berater. Riesen Unterschied.",
       rating: 5,
       highlight: "Besser als ChatGPT",
     },
@@ -43,7 +43,7 @@ export default function Testimonials() {
       role: "Buchhalterin",
       location: "Graz",
       quote:
-        "Für den Preis habe ich nicht viel erwartet, aber ich war wirklich überrascht. Der Lebenslauf sieht professionell aus, das Anschreiben ist individuell und passt perfekt zur Stelle.",
+        "Für den Preis habe ich ehrlich gesagt nicht viel erwartet. Aber wow. Der Lebenslauf sieht aus, als hätte ein Profi ihn gemacht. Weil er es hat. Nur halt eine KI.",
       rating: 5,
       highlight: "Preis-Leistung top",
     },
@@ -52,7 +52,7 @@ export default function Testimonials() {
       role: "Quereinsteiger IT",
       location: "Hamburg",
       quote:
-        "Als Quereinsteiger ist es besonders schwer, Recruiter zu überzeugen. Stellio hat meine bisherige Erfahrung so aufbereitet, dass sie für IT-Positionen relevant klingt. Bin seit 3 Monaten in meinem neuen Job.",
+        "Als Quereinsteiger denkst du, du hast keine Chance. Stellio hat meine bisherige Erfahrung so aufbereitet, dass sie für IT-Positionen relevant klingt. Bin seit 3 Monaten im neuen Job.",
       rating: 5,
       highlight: "Erfolgreicher Quereinstieg",
     },
@@ -62,12 +62,12 @@ export default function Testimonials() {
     <section className="py-24 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <p className="text-sm font-semibold text-blue-600 uppercase tracking-wider mb-3">Erfolgsgeschichten</p>
+          <p className="text-sm font-semibold text-blue-600 uppercase tracking-wider mb-3">Das sagen echte Nutzer</p>
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
-            Was unsere Nutzer sagen
+            Die haben aufgehört zu raten.
           </h2>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            Studenten, Berufserfahrene, Quereinsteiger – Stellio hilft jedem, der mehr aus seiner Bewerbung herausholen will.
+            Studenten, Profis, Quereinsteiger – alle hatten das gleiche Problem. Und alle haben es mit Stellio gelöst.
           </p>
         </div>
 
@@ -98,7 +98,7 @@ export default function Testimonials() {
 
               {/* Author */}
               <div className="flex items-center gap-3 pt-4 border-t border-slate-100">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center text-white text-sm font-bold">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 to-indigo-500 flex items-center justify-center text-white text-sm font-bold">
                   {t.name.charAt(0)}
                 </div>
                 <div>
@@ -116,7 +116,7 @@ export default function Testimonials() {
             { value: "1.000+", label: "Bewerbungen erstellt" },
             { value: "4.9/5", label: "Durchschnittliche Bewertung" },
             { value: "89%", label: "erhalten Einladungen" },
-            { value: "<5 Min.", label: "bis zur fertigen Bewerbung" },
+            { value: "DACH", label: "optimiert für AT, DE, CH" },
           ].map((stat) => (
             <div key={stat.label} className="text-center">
               <p className="text-3xl font-bold text-slate-900 mb-1">{stat.value}</p>

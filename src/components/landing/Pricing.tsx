@@ -17,9 +17,9 @@ export default function Pricing() {
         "DIN 5008 konform",
         "Auf die Stelle zugeschnitten",
         "PDF-Download",
-        "14 Tage Geld-zurück",
+        "Einmalige Zahlung",
       ],
-      cta: "Jetzt starten",
+      cta: "Anschreiben erstellen",
       highlighted: false,
     },
     {
@@ -35,11 +35,11 @@ export default function Pricing() {
         "Interview Coaching gratis",
         "ATS-optimiert",
         "PDF-Download",
-        "14 Tage Geld-zurück",
+        "Einmalige Zahlung",
       ],
-      cta: "Bestes Angebot wählen",
+      cta: "Komplettpaket sichern",
       highlighted: true,
-      badge: "50% RABATT",
+      badge: "BESTES ANGEBOT",
     },
     {
       name: "Lebenslauf",
@@ -50,11 +50,11 @@ export default function Pricing() {
       features: [
         "Professioneller Lebenslauf",
         "ATS-optimiertes Format",
-        "Deutscher Standard (DACH)",
+        "DACH-Standard",
         "PDF-Download",
-        "14 Tage Geld-zurück",
+        "Einmalige Zahlung",
       ],
-      cta: "Jetzt starten",
+      cta: "Lebenslauf erstellen",
       highlighted: false,
     },
   ];
@@ -69,7 +69,7 @@ export default function Pricing() {
           </div>
           <p className="text-sm font-semibold text-blue-600 uppercase tracking-wider mb-3">Preise</p>
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
-            Investiere in deine Karriere
+            Weniger als ein Kaffee im Monat.
           </h2>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
             Einmalige Zahlung. Kein Abo. Kein Kleingedrucktes.
@@ -151,8 +151,8 @@ export default function Pricing() {
             Sichere Zahlung via PayPal
           </span>
           <span className="flex items-center gap-2">
-            <svg className="w-5 h-5 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6" /></svg>
-            14 Tage Geld-zurück-Garantie
+            <svg className="w-5 h-5 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 13l4 4L19 7" /></svg>
+            Einmalige Zahlung – kein Abo
           </span>
           <span className="flex items-center gap-2">
             <svg className="w-5 h-5 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>

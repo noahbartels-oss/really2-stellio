@@ -9,42 +9,37 @@ const faqs = [
   {
     question: "Wie unterscheidet sich Stellio von ChatGPT?",
     answer:
-      "ChatGPT ist ein allgemeines KI-Tool. Du brauchst die richtigen Prompts und das Ergebnis ist oft generisch, nicht ATS-optimiert und entspricht nicht dem deutschen Bewerbungsstandard. Stellio wurde speziell für den DACH-Arbeitsmarkt entwickelt: DIN 5008 Anschreiben, ATS-optimierte Lebensläufe und individuelles Interview-Coaching – alles in einem Klick.",
+      "ChatGPT spuckt generischen Text aus, den Recruiter sofort erkennen. Du brauchst die richtigen Prompts und das Ergebnis ist trotzdem nicht ATS-optimiert. Stellio wurde speziell für den DACH-Arbeitsmarkt gebaut: DIN 5008 Anschreiben, ATS-optimierte Lebensläufe und individuelles Interview-Coaching – alles automatisch, kein Prompt-Wissen nötig.",
   },
   {
-    question: "Ist das ein Abo oder eine einmalige Zahlung?",
+    question: "Ist das ein Abo?",
     answer:
-      "Einmalige Zahlung. Du zahlst einmal und bekommst deine fertigen Unterlagen. Kein Abo, keine versteckten Kosten, keine automatische Verlängerung. Sicher bezahlen via PayPal.",
+      "Nein. Einmalige Zahlung. Du zahlst einmal, bekommst dein Dokument. Kein Abo, keine versteckten Kosten, keine automatische Verlängerung. Sicher bezahlen via PayPal.",
   },
   {
-    question: "Sind die Bewerbungen wirklich personalisiert?",
+    question: "Sind die Bewerbungen wirklich individuell?",
     answer:
-      "Ja. Jedes Dokument wird individuell auf Basis deines Profils, deiner Erfahrung und deiner Zielposition erstellt. Keine Textbausteine, keine Vorlagen. Jede Bewerbung ist ein Unikat – auf dich und die Stelle zugeschnitten.",
+      "Ja. Jedes Dokument wird auf Basis deines Profils, deiner Erfahrung und deiner Zielposition neu erstellt. Kein Copy-Paste, keine Textbausteine. Jede Bewerbung ist ein Unikat – kein Recruiter merkt, dass eine KI geholfen hat.",
   },
   {
     question: "Was bedeutet ATS-optimiert?",
     answer:
-      "ATS (Applicant Tracking System) sind Softwaresysteme, die über 75% der Unternehmen nutzen, um Bewerbungen automatisch vorzufiltern. Ein nicht-optimierter Lebenslauf wird oft gar nicht von einem Menschen gesehen. Stellio formatiert deine Dokumente so, dass sie jeden ATS-Filter bestehen.",
+      "ATS (Applicant Tracking System) – über 75% aller Unternehmen nutzen Software, die Bewerbungen automatisch vorfiltert. Ein nicht optimierter Lebenslauf wird oft gar nicht von einem Menschen gesehen. Stellio formatiert deine Dokumente so, dass sie jeden Filter bestehen.",
   },
   {
-    question: "Wie schnell bekomme ich meine Bewerbung?",
+    question: "Kann ich die Dokumente bearbeiten?",
     answer:
-      "In unter 5 Minuten. Profil ausfüllen, Zielposition eingeben – fertig. Dein Lebenslauf, Anschreiben oder Interview-Coaching wird sofort generiert und steht als PDF zum Download bereit.",
+      "Klar. Du bekommst alles als bearbeitbare Dateien. Anpassen, ergänzen, absenden – alles in deiner Hand.",
   },
   {
-    question: "Kann ich die erstellten Dokumente bearbeiten?",
+    question: "Für welche Branchen funktioniert Stellio?",
     answer:
-      "Natürlich. Du erhältst deine Dokumente als bearbeitbare Dateien. Du kannst alles nach deinen Wünschen anpassen, bevor du es abschickst.",
-  },
-  {
-    question: "Für welche Branchen und Positionen funktioniert Stellio?",
-    answer:
-      "Für alle. Egal ob IT, Marketing, Finanzen, Gesundheitswesen, Handwerk oder Verwaltung – unsere KI passt Sprache, Ton und Inhalt an deine spezifische Branche und Position an. Von Berufseinsteigern bis Führungskräften.",
+      "Für alle. IT, Marketing, Finanzen, Gesundheitswesen, Handwerk, Verwaltung – egal. Stellio passt Sprache, Ton und Inhalt an deine Branche an. Von Berufseinsteigern bis Führungskräften, Quereinsteigern bis Profis.",
   },
   {
     question: "Was ist, wenn ich nicht zufrieden bin?",
     answer:
-      "Kein Risiko: Du bekommst innerhalb von 14 Tagen dein Geld zurück. Ohne Wenn und Aber. Wir sind überzeugt von der Qualität – und du wirst es auch sein.",
+      "Kontaktiere uns per E-Mail und wir finden eine Lösung. Wir stehen hinter der Qualität unserer Ergebnisse.",
   },
 ];
 
@@ -57,10 +52,10 @@ export default function FAQ() {
         <div className="text-center mb-16">
           <p className="text-sm font-semibold text-blue-600 uppercase tracking-wider mb-3">FAQ</p>
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
-            Häufige Fragen
+            Noch Fragen? Hier sind Antworten.
           </h2>
           <p className="text-lg text-slate-600">
-            Alles, was du über Stellio wissen musst – auf einen Blick.
+            Alles, was du über Stellio wissen musst.
           </p>
         </div>
 
@@ -108,9 +103,9 @@ export default function FAQ() {
         </div>
 
         <div className="mt-12 text-center">
-          <p className="text-slate-600 mb-4">Noch Fragen? Wir helfen gerne.</p>
+          <p className="text-slate-600 mb-4">Bereit? Dann los.</p>
           <Link href="/auth/signup">
-            <Button size="lg">Jetzt kostenlos starten</Button>
+            <Button size="lg">Jetzt Bewerbung erstellen</Button>
           </Link>
         </div>
       </div>

@@ -11,49 +11,71 @@ interface PayPalCheckoutProps {
 
 export default function PayPalCheckout({ productType, onSuccess }: PayPalCheckoutProps) {
   const router = useRouter();
-  const [{ isPending }] = usePayPalScriptReducer();
+  const [{ isPending, isRejected }] = usePayPalScriptReducer();
   const [error, setError] = useState("");
 
   const createOrder = async () => {
     setError("");
-    const res = await fetch("/api/paypal/create-order", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ productType }),
-    });
+    try {
+      const res = await fetch("/api/paypal/create-order", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ productType }),
+      });
 
-    const data = await res.json();
+      const data = await res.json();
 
-    if (!res.ok) {
-      setError(data.error || "Bestellung konnte nicht erstellt werden");
-      throw new Error(data.error);
+      if (!res.ok) {
+        const msg = data.error || "Bestellung konnte nicht erstellt werden";
+        setError(msg);
+        throw new Error(msg);
+      }
+
+      return data.orderID;
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : "Verbindungsfehler. Bitte prüfe deine Internetverbindung.";
+      if (!error) setError(msg);
+      throw err;
     }
-
-    return data.orderID;
   };
 
   const onApprove = async (data: { orderID: string }) => {
     setError("");
-    const res = await fetch("/api/paypal/capture-order", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ orderID: data.orderID }),
-    });
+    try {
+      const res = await fetch("/api/paypal/capture-order", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ orderID: data.orderID }),
+      });
 
-    const result = await res.json();
+      const result = await res.json();
 
-    if (!res.ok) {
-      setError(result.error || "Zahlung konnte nicht abgeschlossen werden");
-      return;
-    }
+      if (!res.ok) {
+        setError(result.error || "Zahlung konnte nicht abgeschlossen werden");
+        return;
+      }
 
-    if (onSuccess) {
-      onSuccess();
-    } else {
-      router.push("/dashboard?payment=success");
-      router.refresh();
+      if (onSuccess) {
+        onSuccess();
+      } else {
+        router.push("/dashboard?payment=success");
+        router.refresh();
+      }
+    } catch {
+      setError("Verbindungsfehler beim Abschließen der Zahlung. Bitte versuche es erneut.");
     }
   };
+
+  if (isRejected) {
+    return (
+      <div className="p-4 bg-amber-50 border border-amber-200 rounded-xl text-amber-700 text-sm text-center">
+        <p className="font-medium mb-1">PayPal konnte nicht geladen werden</p>
+        <p className="text-xs text-amber-600">
+          Bitte deaktiviere deinen Ad-Blocker oder versuche es in einem anderen Browser.
+        </p>
+      </div>
+    );
+  }
 
   return (
     <div className="w-full">
@@ -78,8 +100,14 @@ export default function PayPalCheckout({ productType, onSuccess }: PayPalCheckou
           }}
           createOrder={createOrder}
           onApprove={onApprove}
-          onError={() => {
-            setError("Ein Fehler ist aufgetreten. Bitte versuche es erneut.");
+          onCancel={() => {
+            setError("Zahlung wurde abgebrochen. Du kannst es jederzeit erneut versuchen.");
+          }}
+          onError={(err) => {
+            console.error("PayPal Button Error:", err);
+            setError(
+              "PayPal-Zahlung fehlgeschlagen. Bitte deaktiviere deinen Ad-Blocker oder versuche es erneut."
+            );
           }}
         />
       )}

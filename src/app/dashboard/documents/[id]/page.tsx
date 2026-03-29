@@ -71,14 +71,15 @@ export default function DocumentPage({ params }: { params: Promise<{ id: string 
       key: getRecommendedProduct(),
       label: "Einzelprodukt",
       price: PRODUCTS[getRecommendedProduct() as keyof typeof PRODUCTS].displayPrice,
+      originalPrice: PRODUCTS[getRecommendedProduct() as keyof typeof PRODUCTS].originalPrice,
       subtitle: "Nur dieses Dokument",
       highlighted: false,
     },
     {
       key: "PRO_BUNDLE",
       label: "Pro Bundle",
-      price: "17,99€",
-      originalPrice: "29,99€",
+      price: PRODUCTS.PRO_BUNDLE.displayPrice,
+      originalPrice: PRODUCTS.PRO_BUNDLE.originalPrice,
       subtitle: "CV + Bewerbung + Interview",
       highlighted: true,
       badge: "BELIEBT",
@@ -86,8 +87,8 @@ export default function DocumentPage({ params }: { params: Promise<{ id: string 
     {
       key: "PREMIUM",
       label: "Premium",
-      price: "22,99€",
-      originalPrice: "39,99€",
+      price: PRODUCTS.PREMIUM.displayPrice,
+      originalPrice: PRODUCTS.PREMIUM.originalPrice,
       subtitle: "Maximale Qualität",
       highlighted: false,
     },
@@ -220,7 +221,7 @@ export default function DocumentPage({ params }: { params: Promise<{ id: string 
           )}
 
           <p className="text-center text-xs text-slate-400 mt-4">
-            Einmalige Zahlung · 14 Tage Geld-zurück-Garantie · Sichere Zahlung via PayPal
+            Einmalige Zahlung · Sichere Zahlung via PayPal
           </p>
         </Card>
       )}
